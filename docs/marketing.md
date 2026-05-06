@@ -12,7 +12,7 @@ Speak naturally, let AI clean up the command, and send the polished text to the 
 
 Wispkin turns rough spoken thoughts into clear, ready-to-send prompts on macOS. Use your own AI provider, choose the models that fit your token budget, and keep control of the path between your microphone and your tools.
 
-**Logo:** Use `docs/site/assets/wispkin-logo.svg` as the primary brand mark for marketing pages and launch materials.
+**Logo:** Use `assets/wispkin-logo.svg` as the primary brand mark for marketing pages and launch materials.
 
 **Primary CTA:** Download Wispkin  
 **Secondary CTA:** View Privacy Policy
