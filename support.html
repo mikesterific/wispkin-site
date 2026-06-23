@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Support - Wispkin</title>
-    <meta name="description" content="Support and troubleshooting for Wispkin." />
+    <title>Support - Whispkin</title>
+    <meta name="description" content="macOS setup guide for Whispkin permissions, providers, output modes, and troubleshooting." />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Wispkin home">
+      <a class="brand" href="index.html" aria-label="Whispkin home">
         <img src="assets/AppIcon-1024.png" alt="" />
-        <span>Wispkin</span>
+        <span>Whispkin</span>
       </a>
       <nav aria-label="Primary navigation">
         <a href="index.html#features">Features</a>
@@ -22,66 +22,134 @@
     </header>
 
     <main class="article-page">
-      <p class="eyebrow">Support</p>
-      <h1>Wispkin Support</h1>
+      <p class="eyebrow">Setup Guide</p>
+      <h1>Whispkin macOS Setup Guide</h1>
       <p class="lede">
-        Most setup issues are related to microphone access, Accessibility permission, provider API
-        keys, or the selected output mode.
+        Whispkin is a macOS menu bar app that turns rough spoken thoughts into cleaned-up text for
+        your editor, chat app, terminal, browser, or other LLM workflow. To work smoothly, Whispkin
+        needs a few macOS permissions and settings.
       </p>
 
-      <h2>Getting Help</h2>
-      <p>For support, contact <a href="mailto:support@example.com">support@example.com</a>.</p>
+      <h2>Before You Start</h2>
+      <p>
+        Install and open Whispkin. It appears in the menu bar, not the Dock. Open the Whispkin menu
+        bar item to reach Settings, provider configuration, and setup status.
+      </p>
+      <p>If you deny a permission by mistake, you can turn it back on later in System Settings.</p>
 
-      <h2>Quick Start</h2>
+      <h2>Allow Microphone Access</h2>
+      <p>Whispkin needs microphone access so it can record your voice when you start a capture.</p>
       <ol>
-        <li>Install and open Wispkin.</li>
-        <li>Grant microphone permission when macOS asks.</li>
-        <li>Open Settings from the menu bar popover.</li>
-        <li>Add API keys for the providers you want to use.</li>
-        <li>Choose a transcription provider, correction provider, and models for your token budget.</li>
-        <li>Press the configured hotkey, speak, then release or press again depending on your mode.</li>
+        <li>Open System Settings.</li>
+        <li>Go to Privacy &amp; Security.</li>
+        <li>Select Microphone.</li>
+        <li>Turn on Whispkin.</li>
+        <li>Quit and reopen Whispkin.</li>
       </ol>
-
-      <h2>Wispkin Does Not Record Audio</h2>
       <p>
-        Open System Settings, go to Privacy & Security, select Microphone, and make sure Wispkin is
-        enabled. Restart Wispkin after changing the permission.
+        If Whispkin does not appear in the Microphone list, open Whispkin and try recording once so
+        macOS can show the permission prompt.
       </p>
 
-      <h2>Text Does Not Appear at the Cursor</h2>
+      <h2>Allow Accessibility for Automatic Paste</h2>
       <p>
-        Wispkin may need Accessibility permission to paste or type into the active app. Open System
-        Settings, go to Privacy & Security, select Accessibility, enable Wispkin, then quit and
-        reopen the app.
+        Whispkin can copy cleaned text to the clipboard without Accessibility access. If you want
+        Whispkin to paste or type the cleaned text into the app where your cursor is, macOS needs
+        Accessibility permission.
       </p>
-      <p>If automatic insertion still fails, Wispkin should fall back to copying text to the clipboard.</p>
-
-      <h2>API Key Errors</h2>
+      <ol>
+        <li>Open System Settings.</li>
+        <li>Go to Privacy &amp; Security.</li>
+        <li>Select Accessibility.</li>
+        <li>Turn on Whispkin.</li>
+        <li>Quit and reopen Whispkin.</li>
+      </ol>
       <p>
-        Make sure the provider key is valid and has access to the selected model. Billing, model
-        availability, rate limits, and API errors are controlled by the provider you configure.
-      </p>
-
-      <h2>Managing Token Use</h2>
-      <p>
-        In Settings, choose smaller or faster correction models when you want low-token cleanup and
-        lower operating cost. Choose larger models when nuanced rewriting matters more than speed or
-        token use.
+        If automatic insertion still does not work, Whispkin should fall back to copying the cleaned
+        text to your clipboard. You can then paste manually with Command-V.
       </p>
 
-      <h2>Useful Details for Support</h2>
+      <h2>Choose an Output Mode</h2>
+      <p>Open Whispkin Settings and choose how cleaned text should be delivered.</p>
       <ul>
-        <li>macOS version.</li>
-        <li>Wispkin version.</li>
-        <li>Selected transcription provider and model.</li>
-        <li>Selected correction provider and model.</li>
-        <li>Whether microphone and Accessibility permissions are enabled.</li>
-        <li>The exact error message shown in Wispkin.</li>
+        <li>
+          <strong>Smart Auto-Paste:</strong> Whispkin tries to insert text at your cursor when
+          possible and falls back to clipboard behavior when needed. This requires Accessibility
+          permission.
+        </li>
+        <li>
+          <strong>Clipboard:</strong> Whispkin copies cleaned text to your clipboard. You paste it
+          manually with Command-V. This is the safest mode if automatic paste is unavailable.
+        </li>
+      </ul>
+      <p>
+        Some apps, browsers, terminals, remote desktops, password fields, and secure text fields may
+        block automatic insertion even when Accessibility permission is enabled.
+      </p>
+
+      <h2>Add Provider API Keys</h2>
+      <p>Whispkin uses the AI providers you configure. Add the required API keys in Whispkin Settings.</p>
+      <ol>
+        <li>Open the Whispkin menu bar item.</li>
+        <li>Open Settings.</li>
+        <li>Add API keys for the providers you want to use.</li>
+        <li>Choose a transcription provider and model.</li>
+        <li>Choose a correction provider and model.</li>
+      </ol>
+      <p>
+        Your provider account controls billing, model access, rate limits, and provider-side data
+        handling.
+      </p>
+
+      <h2>Allow Network Access</h2>
+      <p>
+        Whispkin needs an internet connection when using cloud transcription or correction providers.
+        If you use a firewall, VPN, corporate device policy, or network filter, allow Whispkin to
+        connect to the providers you selected.
+      </p>
+      <p>
+        If provider calls fail, check your network connection, API key, provider account status, and
+        selected model availability.
+      </p>
+
+      <h2>Set or Change the Hotkey</h2>
+      <p>Whispkin uses a global hotkey so you can start recording from any app.</p>
+      <ol>
+        <li>Open Whispkin Settings.</li>
+        <li>Review the configured hotkey.</li>
+        <li>If another app uses the same shortcut, choose a different one.</li>
+      </ol>
+      <p>
+        If the hotkey does nothing, another app may already be using it or macOS may need Whispkin to
+        be reopened after permission changes.
+      </p>
+
+      <h2>Quick Troubleshooting</h2>
+      <ul>
+        <li>
+          If Whispkin cannot hear you, check System Settings &gt; Privacy &amp; Security &gt;
+          Microphone and make sure Whispkin is enabled.
+        </li>
+        <li>
+          If cleaned text does not appear at your cursor, check System Settings &gt; Privacy &
+          Security &gt; Accessibility and make sure Whispkin is enabled.
+        </li>
+        <li>
+          If automatic paste still fails, switch to Clipboard output mode and paste manually with
+          Command-V.
+        </li>
+        <li>
+          If transcription or cleanup fails, confirm your provider API key, selected model, network
+          connection, and provider account status.
+        </li>
+        <li>
+          If Whispkin is not in the Dock, that is expected. Whispkin lives in the macOS menu bar.
+        </li>
       </ul>
     </main>
 
     <footer class="site-footer">
-      <span>© 2026 Wispkin</span>
+      <span>© 2026 Whispkin</span>
       <div>
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
