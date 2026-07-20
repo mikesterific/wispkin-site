@@ -83,3 +83,7 @@ If transcription or cleanup fails, confirm your provider API key, selected model
 
 If Whispkin is not in the Dock, that is expected. Whispkin lives in the macOS menu bar.
 
+## Contact
+
+Still stuck? Email [support@whispkin.com](mailto:support@whispkin.com).
+
