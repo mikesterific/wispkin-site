@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>API Keys Setup - Whispkin</title>
+    <meta
+      name="description"
+      content="Get and fund API keys for OpenAI, Claude, Gemini, and Perplexity so you can use them with Whispkin Settings."
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Whispkin home">
+        <img src="assets/AppIcon-1024.png" alt="" />
+        <span>Whispkin</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#privacy">Privacy</a>
+        <a href="support.html">Support</a>
+        <a class="nav-cta" href="index.html#download">Download</a>
+      </nav>
+    </header>
+
+    <main class="article-page">
+      <p class="eyebrow">Provider Setup</p>
+      <h1>API Keys for Whispkin</h1>
+      <p class="lede">
+        Whispkin uses the AI providers you configure in Settings. Create an API key for each
+        provider you want to use, add funds or billing where required, then paste the key into
+        Whispkin.
+      </p>
+
+      <h2>How Whispkin Uses Providers</h2>
+      <p>
+        In Settings you choose a <strong>transcription</strong> provider and a
+        <strong>correction</strong> provider. You can mix them. Only providers with an API key
+        configured will work for the role you assign them.
+      </p>
+      <ul>
+        <li>
+          <strong>Transcription:</strong> OpenAI or Gemini. Turns your recording into text
+          (Whisper-style or Gemini audio models).
+        </li>
+        <li>
+          <strong>Correction:</strong> OpenAI, Claude (Anthropic), Gemini, or Perplexity. Cleans up
+          the transcript into a ready-to-send prompt.
+        </li>
+      </ul>
+      <p>
+        Consumer chat subscriptions (ChatGPT, Claude.ai, Gemini apps, Perplexity Pro) do not
+        include API usage. Each provider bills API calls separately through its developer console.
+      </p>
+
+      <h2>Add Keys in Whispkin</h2>
+      <ol>
+        <li>Open the Whispkin menu bar item.</li>
+        <li>Open Settings.</li>
+        <li>Paste each API key into the matching provider field.</li>
+        <li>Choose a transcription provider and model.</li>
+        <li>Choose a correction provider and model.</li>
+      </ol>
+      <p>
+        Keys are stored locally in the macOS Keychain. Never share a key or paste it into chats,
+        screenshots, or public documents.
+      </p>
+
+      <h2 id="openai">OpenAI</h2>
+      <p>
+        Use OpenAI for transcription, correction, or both. Create a key from the
+        <a href="https://platform.openai.com/api-keys">OpenAI API Keys</a> page.
+      </p>
+      <ol>
+        <li>Sign in to or create an OpenAI Platform account.</li>
+        <li>Open API Keys and select <strong>Create new secret key</strong>.</li>
+        <li>Name the key, create it, and copy it immediately. OpenAI shows the full key only once.</li>
+        <li>In Whispkin Settings, paste it into the OpenAI field.</li>
+      </ol>
+      <p>
+        API usage draws from your Platform credit balance. A ChatGPT subscription does not cover
+        API calls.
+      </p>
+      <ol>
+        <li>
+          Open
+          <a href="https://platform.openai.com/settings/organization/billing/overview">OpenAI Billing</a>.
+        </li>
+        <li>Add a payment method if you have not already.</li>
+        <li>Select <strong>Add to credit balance</strong> (or the equivalent option shown).</li>
+        <li>Purchase a small amount of credits and confirm.</li>
+        <li>Optionally enable auto-recharge and set a monthly limit.</li>
+      </ol>
+
+      <h2 id="claude">Claude (Anthropic)</h2>
+      <p>
+        Use Claude for correction only. Create a key from the
+        <a href="https://console.anthropic.com/settings/keys">Anthropic Console</a>.
+      </p>
+      <ol>
+        <li>Sign in to or create an Anthropic Console account (platform.claude.com / console.anthropic.com).</li>
+        <li>Open API Keys and create a new key.</li>
+        <li>Copy the key immediately. Anthropic shows the full key only once.</li>
+        <li>In Whispkin Settings, paste it into the Claude (Anthropic) field.</li>
+      </ol>
+      <p>
+        Claude.ai Pro, Max, and Team plans do not include API credits. Fund the Console separately
+        before requests will succeed.
+      </p>
+      <ol>
+        <li>
+          Open
+          <a href="https://console.anthropic.com/settings/billing">Anthropic Billing</a>.
+        </li>
+        <li>Add a payment method.</li>
+        <li>Purchase prepaid credits or enable auto top-up if available.</li>
+        <li>Optionally set a monthly spend limit.</li>
+      </ol>
+
+      <h2 id="gemini">Gemini (Google)</h2>
+      <p>
+        Use Gemini for transcription, correction, or both. Create a key in
+        <a href="https://aistudio.google.com/app/apikey">Google AI Studio</a>.
+      </p>
+      <ol>
+        <li>Sign in with a Google account.</li>
+        <li>Open the API keys page. New users often get a project and key created automatically.</li>
+        <li>Select <strong>Create API key</strong> if you need another key, then copy it.</li>
+        <li>In Whispkin Settings, paste it into the Gemini (Google) field.</li>
+      </ol>
+      <p>
+        Free-tier limits may apply at first. For higher limits or paid usage, set up billing in AI
+        Studio. See Google’s
+        <a href="https://ai.google.dev/gemini-api/docs/billing">Gemini API billing guide</a>.
+      </p>
+      <ol>
+        <li>In AI Studio, open the API keys or Projects page.</li>
+        <li>Find your project and select <strong>Set up billing</strong>.</li>
+        <li>Link or create a Google Cloud billing account and add a payment method.</li>
+        <li>
+          Complete prepay or postpay setup as prompted. New accounts are often asked to prepay a
+          small credit balance.
+        </li>
+        <li>Monitor usage and remaining credits in the AI Studio dashboard.</li>
+      </ol>
+
+      <h2 id="perplexity">Perplexity</h2>
+      <p>
+        Use Perplexity for correction only. Create a key in the
+        <a href="https://console.perplexity.ai/">Perplexity API Console</a>
+        (API keys may also appear under
+        <a href="https://www.perplexity.ai/settings/api">Perplexity API settings</a>).
+      </p>
+      <ol>
+        <li>Sign in to or create a Perplexity account.</li>
+        <li>Open the API Console and go to <strong>API keys</strong>.</li>
+        <li>Generate a new key and copy it immediately.</li>
+        <li>In Whispkin Settings, paste it into the Perplexity field.</li>
+      </ol>
+      <p>
+        A Perplexity consumer subscription is not required for API access. API usage is billed
+        separately with prepaid credits.
+      </p>
+      <ol>
+        <li>In the API Console, open <strong>Billing</strong>.</li>
+        <li>Add a payment method.</li>
+        <li>Select <strong>Buy more credits</strong> (or the equivalent option).</li>
+        <li>Optionally enable auto reload so requests are not blocked when the balance runs out.</li>
+      </ol>
+
+      <h2>If a Provider Call Fails</h2>
+      <ul>
+        <li>Confirm the key is pasted into the correct provider field in Whispkin Settings.</li>
+        <li>Confirm the account has available credits or an active billing plan.</li>
+        <li>Confirm the selected model is available on that provider account.</li>
+        <li>Check your network connection and any firewall or VPN rules.</li>
+        <li>
+          For more macOS setup help, see the
+          <a href="support.html">Whispkin setup guide</a>.
+        </li>
+      </ul>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Whispkin</span>
+      <div>
+        <a href="support.html">Support</a>
+        <a href="api-keys.html">API Keys</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </footer>
+  </body>
+</html>

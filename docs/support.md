@@ -41,6 +41,8 @@ Open Whispkin Settings and choose how cleaned text should be delivered.
 
 Some apps, browsers, terminals, remote desktops, password fields, and secure text fields may block automatic insertion even when Accessibility permission is enabled.
 
+Need help creating or funding provider keys first? See [API Keys for Whispkin](api-keys.md).
+
 ## Add Provider API Keys
 
 Whispkin uses the AI providers you configure. Add the required API keys in Whispkin Settings.
@@ -51,7 +53,7 @@ Whispkin uses the AI providers you configure. Add the required API keys in Whisp
 4. Choose a transcription provider and model.
 5. Choose a correction provider and model.
 
-Your provider account controls billing, model access, rate limits, and provider-side data handling.
+Your provider account controls billing, model access, rate limits, and provider-side data handling. For step-by-step instructions to create and fund keys for OpenAI, Claude, Gemini, and Perplexity, see [API Keys for Whispkin](api-keys.md).
 
 ## Allow Network Access
 
